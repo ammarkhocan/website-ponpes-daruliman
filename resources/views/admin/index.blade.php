@@ -13,8 +13,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Blog Artikel</h5>
                           <p class="card-text">Atur dan kelola artikel kegiatan pesantren</p>
-                          <a href="" class="btn btn-primary">Detail</a>
-                          {{-- <a href="{{ route('blog') }}" class="btn btn-primary">Detail</a> --}}
+                          <a href="{{ route('blog') }}" class="btn btn-primary">Detail</a>
                         </div>
                       </div>
                 </div>

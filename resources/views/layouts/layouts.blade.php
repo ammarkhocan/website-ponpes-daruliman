@@ -19,15 +19,15 @@
 
     <body>
 
-        {{-- Navbar --}}
-        @include('layouts.navbar')
+    {{-- Navbar --}}
+    @include('layouts.navbar')
 
-        {{-- Content --}}
-        @yield('content')
+    {{-- Content --}}
+    @yield('content')
 
 
-              {{-- Footer --}}
-      <section id="footer" class="bg-white">
+    {{-- Footer --}}
+    <section id="footer" class="bg-white">
         <div class="container py-4">
             <footer>
                 <div class="row">
@@ -138,4 +138,22 @@
             });
         });
     </script>   
+
+    {{-- JQUERY --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    {{-- Summernote JS --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+                $('#summernote').summernote({
+                    height: 200,
+                });
+        });
+    </script>
+
+    
+
+
 </html>
