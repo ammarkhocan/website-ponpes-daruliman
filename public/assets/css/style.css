@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Button */
+.btn-danger {
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+    padding: 10px 35px;
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    border-radius: 10px;
+    background-color: #30693e;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 45px;
+}
+
+.btn-outline-custom:hover {
+    background-color: #24532a;
+    color: white;
+}
+
+.btn-regis {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #30693e; /* Warna teks hijau tua */
+    background-color: transparent; /* Background transparan */
+    border: 2px solid #30693e; /* Border hijau tua */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-regis:hover {
+    background-color: #30693e; /* Background putih saat hover */
+    color: #ffffff; /* Teks putih saat hover */
+    border-color: #30693e; /* Border tetap hijau tua */
+}
+/* Navbar */
+.nav-item .nav-link {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.scroll-nav-active {
+    background-color: white;
+    border-bottom: 2px solid #30693e;
+    box-shadow: 1px 1px 11px -1px rgba(1, 1, 1, 0.08);
+}
+
+.text-nav-active {
+    color: black;
+}
+
+/* Hero */
+#hero {
+    background-image: url("../../assets/images/il-photo-home.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+.hero-title {
+    padding-top: 250px;
+}
+
+.hero-text {
+    font-size: 65px;
+    font-weight: 600;
+}
+
+/* Join */
+.stripe {
+    height: 5px;
+    width: 50px;
+    background-color: #30693e;
+}
+
+/* Vidio */
+#vidio {
+    background-image: url("../../assets/images/il-bg-video.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+/* Foto */
+/* Paralax */
+.section-foto {
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax {
+    background-image: url("../../assets/images/il-bg-foto.jpeg");
+}
+
+.stripe-putih {
+    height: 5px;
+    width: 40px;
+    background-color: #ffffff;
+}
+
+/* Responsive layar kecil 450 */
+@media screen and (min-width: 450px) {
+    .hero-text {
+        font-size: 35px;
+        font-weight: 600;
+    }
+}
+
+/* Responsive layar kecil 550 */
+@media screen and (min-width: 550px) {
+    .hero-text {
+        font-size: 35px;
+        font-weight: 600;
+    }
+}
+
+/* Responsive layar kecil 800 */
+@media screen and (min-width: 800px) {
+    .hero-text {
+        font-size: 65px;
+        font-weight: 600;
+    }
+}
