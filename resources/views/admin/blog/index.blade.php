@@ -31,8 +31,8 @@
                                 {{ $artikel->judul }}
                             </td>
                             <td>
-                                <a href="" class="btn btn-warning">Edit</a>
-                                <form action="" method="POST" class="d-inline">
+                                <a href="{{ route('blog.edit', $artikel->id) }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ route('blog.destroy', $artikel->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Hapus</button>
                                 </form>
