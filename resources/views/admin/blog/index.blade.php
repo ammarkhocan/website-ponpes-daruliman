@@ -7,6 +7,16 @@
 
         <a href="{{ route('blog.create') }}" class="btn btn-primary">Buat Artikel</a>
 
+        {{-- Pesan Sukses --}}
+        @if (section()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Informasi</strong>{{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
+
+
         <div class="table-responsive py-3">
             <table class="table table-bordered">
                 <thead>
