@@ -8,12 +8,13 @@
         <a href="{{ route('blog.create') }}" class="btn btn-primary">Buat Artikel</a>
 
         {{-- Pesan Sukses --}}
-        @if (section()->has('success'))
+        @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Informasi</strong>{{ session('success') }}
+            <strong>Informasi:</strong> {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+
 
 
 
@@ -44,7 +45,7 @@
                                 <a href="{{ route('blog.edit', $artikel->id) }}" class="btn btn-warning">Edit</a>
                                 <form action="{{ route('blog.destroy', $artikel->id) }}" method="POST" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    <button type="submit" onclick="alert('apakah yakin akan di hapus ?')" class="btn btn-danger">Hapus</button>
                                 </form>
                             </td>
                         </tr>

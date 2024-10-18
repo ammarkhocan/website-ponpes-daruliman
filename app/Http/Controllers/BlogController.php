@@ -8,6 +8,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+
 
 class BlogController extends Controller
 {
@@ -133,9 +135,13 @@ class BlogController extends Controller
 
         // Cek jika ada image baru
         if ($request->hasFile('image')) {
-            if (\File::exists('storage/artikel/' . $artikel->image)) {
-                \File::delete('storage/artikel/' . $request->old_image);
+            // if (\File::exists('storage/artikel/' . $artikel->image)) {
+            //     \File::delete('storage/artikel/' . $request->old_image);
+            // }
+            if (File::exists(storage_path('app/public/artikel/' . $artikel->image))) {
+                File::delete(storage_path('app/public/artikel/' . $request->old_image));
             }
+
             $fileName = time() . '.' . $request->image->extension();
             $request->file('image')->storeAs('public/artikel', $fileName);
         }
@@ -192,12 +198,15 @@ class BlogController extends Controller
     public function destroy($id)
     {
         $artikel = Blog::find($id);
-        if (\File::exists('storage/artikel/' . $artikel->image)) {
-            \File::delete('storage/artikel/' . $artikel->image);
+
+        // Cek dan hapus file jika ada di storage
+        if (Storage::exists('public/artikel/' . $artikel->image)) {
+            Storage::delete('public/artikel/' . $artikel->image);
         }
 
+        // Hapus data artikel dari database
         $artikel->delete();
 
-        return redirect(route('blog'))->with('success', 'data berhasil di hapus');
+        return redirect(route('blog'))->with('success', 'data berhasil dihapus');
     }
 }

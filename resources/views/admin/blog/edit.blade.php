@@ -31,6 +31,7 @@
             <div class="form-group mb-4">
                 <label for="">Pilih Foto Kegiatan</label>
                 <input type="hidden" name="old_image" value="{{ $artikel->image }}">
+                
                 <div>
                     <img src="{{ asset('storage/artikel/' . $artikel->image ) }}" class="col-lg-4" alt="">
                 </div>
