@@ -11,7 +11,31 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         {{-- Magnific --}}
         <link rel="stylesheet" href="{{ asset('assets/css/magnific.css') }}">
+
+        {{-- Meta untuk tampil di Whatsapp --}}
+        @if (Request::segment(1) == '')
+        <meta property="og:title" content="Pesantren Darul Iman" />
+        <meta name="description" content="Sekolah terbaik untuk generasi muda yang terampil, berkarakter, dan berwawasan Qur'ani" />
+        <meta property="og:url" content="http://pesantrendaruliman.com" />
+        <meta property="og:description" content="Pesantren Darul Iman" />
+        <meta property="og:image" content="{{ asset('assets/icons/logo.ponpes.png') }}" />
+        <meta property="og:type" content="article" />
         <title>Pondok Pesantren Darul Iman</title>
+    @elseif (Request::segment(1) == 'detail')
+        <meta property="og:title" content="{{ $artikel->judul }}" />
+        <meta name="description" content="{{ $artikel->judul }}" />
+        <meta property="og:url" content="http://pesantrendaruliman.com/detail/{{ $artikel->slug }}" />
+        <meta property="og:description" content="{{ $artikel->judul }}" />
+        @if ($artikel->image)
+            <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}" />
+        @else
+            <meta property="og:image" content="{{ asset('assets/icons/logo.ponpes.png') }}" />
+        @endif
+        <meta property="og:type" content="article" />
+
+        <title>Pondok Pesantren Darul Iman | {{ $artikel->title }}</title>
+    @endif
+    {{-- Meta untuk tampil di Whatsapp --}}
 
         <!-- Summernote CSS -->
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
