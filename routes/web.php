@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,9 @@ Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store')
 Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit')->middleware('auth');
 Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('blog.update')->middleware('auth');
 Route::post('/blog/destroy/{id}', [BlogController::class, 'destroy'])->name('blog.destroy')->middleware('auth');
+
+Route::get('/photo', [PhotoController::class, 'index'])->name('photo')->middleware('auth');
+Route::post('/photo/store', [PhotoController::class, 'store'])->name('photo.store')->middleware('auth');
+Route::post('/photo/update/{id}', [PhotoController::class, 'update'])->name('photo.update')->middleware('auth');
+Route::post('/photo/destroy/{id}', [PhotoController::class, 'destroy'])->name('photo.destroy')->middleware('auth');
+Route::delete('/photo/destroy/{id}', [PhotoController::class, 'destroy'])->name('photo.destroy');

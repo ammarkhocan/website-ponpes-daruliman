@@ -23,7 +23,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Photo dan Kegiatan</h5>
                           <p class="card-text">Atur dan kelola photo kegiatan pesantren</p>
-                          <a href="#" class="btn btn-primary">Detail</a>
+                          <a href="{{ route('photo') }}" class="btn btn-primary">Detail</a>
                         </div>
                       </div>
                 </div>
