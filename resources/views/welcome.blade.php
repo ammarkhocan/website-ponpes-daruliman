@@ -189,26 +189,15 @@
       </div>
       
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-6">
-          <a class="image-link" href="{{ asset('assets/images/il-photo-02.png') }}">
-          <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="Deskripsi foto"></a>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6">
-          <a class="image-link" href="{{ asset('assets/images/il-photo-02.png') }}">
-            <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="Deskripsi foto">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6">
-          <a class="image-link" href="{{ asset('assets/images/il-photo-02.png') }}">
-            <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="Deskripsi foto">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6">
-          <a class="image-link" href="{{ asset('assets/images/il-photo-02.png') }}">
-            <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="Deskripsi foto">
-          </a>
-        </div>
-      </div>
+        @foreach ($photos as $photo)  {{-- Ubah dari $photos ke $photo --}}
+            <div class="col-lg-3 col-md-6 col-6">
+                <a class="image-link" href="{{ asset('storage/photo/' . $photo->image) }}">
+                    <img src="{{ asset('storage/photo/' . $photo->image) }}" class="img-fluid" alt="Deskripsi foto">
+                </a>
+                <p>{{ $photo->judul }}</p>
+            </div>
+        @endforeach
+    </div>
     </div>
   </section>
   {{-- Foto --}}
