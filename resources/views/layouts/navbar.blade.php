@@ -36,9 +36,9 @@
         </form>
         @else
 
-        <button class="btn btn-danger">Register</button>
-            
+        
         @endauth
+        <button class="btn btn-danger">Register</button>
         
         </div>
     </div>

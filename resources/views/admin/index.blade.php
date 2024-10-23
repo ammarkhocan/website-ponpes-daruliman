@@ -21,9 +21,19 @@
                     <div class="card shadow-sm rounded-3 border-0">
                         <img src="{{ asset('assets/images/il-bg-foto.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Photo dan Kegiatan</h5>
+                          <h5 class="card-title">Photo Kegiatan</h5>
                           <p class="card-text">Atur dan kelola photo kegiatan pesantren</p>
                           <a href="{{ route('photo') }}" class="btn btn-primary">Detail</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm rounded-3 border-0">
+                        <img src="{{ asset('assets/images/il-bg-foto.jpeg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Video Kegiatan</h5>
+                          <p class="card-text">Atur dan kelola video kegiatan pesantren</p>
+                          <a href="{{ route('video') }}" class="btn btn-primary">Detail</a>
                         </div>
                       </div>
                 </div>
