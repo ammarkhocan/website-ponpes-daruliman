@@ -10,23 +10,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+            <a class="nav-link active" aria-current="page" href="/">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Profil</a>
+            <a class="nav-link active" href="#join">PROFIL</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Berita</a>
+            <a class="nav-link active" href="#berita">BERITA</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Prestasi</a>
+            <a class="nav-link active" href="#">PRESTASI</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Gallery</a>
+            <a class="nav-link active" href="#">GALLERY</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link active" href="#">kontak</a>
-        </li>
+        </li> --}}
         </ul>
         <div class="d-flex">
         @auth
@@ -37,8 +37,8 @@
         @else
 
         
-        @endauth
         <button class="btn btn-danger">Register</button>
+        @endauth
         
         </div>
     </div>

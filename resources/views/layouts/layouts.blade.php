@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="{{ asset('assets/icons/ic-logo-ponpes.ico') }}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('assets/icons/ic-logo-ponpes.ico') }}">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-        {{-- AOS --}}
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        {{-- Magnific --}}
-        <link rel="stylesheet" href="{{ asset('assets/css/magnific.css') }}">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        {{-- Meta untuk tampil di Whatsapp --}}
-        @if (Request::segment(1) == '')
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific.css') }}">
+
+    {{-- Meta Tags for WhatsApp --}}
+    @if (Request::segment(1) == '')
         <meta property="og:title" content="Pesantren Darul Iman" />
         <meta name="description" content="Sekolah terbaik untuk generasi muda yang terampil, berkarakter, dan berwawasan Qur'ani" />
         <meta property="og:url" content="http://pesantrendaruliman.com" />
@@ -26,22 +32,16 @@
         <meta name="description" content="{{ $artikel->judul }}" />
         <meta property="og:url" content="http://pesantrendaruliman.com/detail/{{ $artikel->slug }}" />
         <meta property="og:description" content="{{ $artikel->judul }}" />
-        @if ($artikel->image)
-            <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}" />
-        @else
-            <meta property="og:image" content="{{ asset('assets/icons/logo.ponpes.png') }}" />
-        @endif
+        <meta property="og:image" content="{{ $artikel->image ? asset('storage/artikel/' . $artikel->image) : asset('assets/icons/logo.ponpes.png') }}" />
         <meta property="og:type" content="article" />
-
-        <title>Pondok Pesantren Darul Iman | {{ $artikel->title }}</title>
+        <title>Pondok Pesantren Darul Iman | {{ $artikel->judul }}</title>
     @endif
-    {{-- Meta untuk tampil di Whatsapp --}}
 
-        <!-- Summernote CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    </head>
+    <!-- Summernote CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
     {{-- Navbar --}}
     @include('layouts.navbar')
@@ -49,101 +49,109 @@
     {{-- Content --}}
     @yield('content')
 
-
-    {{-- Footer --}}
-    <section id="footer" class="bg-white">
-        <div class="container py-4">
-            <footer>
-                <div class="row">
-                    {{-- Kolom 1 Navigasi --}}
-                    <div class="col-12 col-md-3 mb-3">
-                        <h5 class="fw-bold mb-3">Navigasi</h5>
-                        <div class="d-flex">
-                            <ul class="nav flex-column me-5">
-                                <li class="nav-item mb-2">
-                                    <a href="/berita" class="nav-link p-0 text-muted">Berita Pesantren</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="/berita" class="nav-link p-0 text-muted">Kegiatan Pesantren</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="/berita" class="nav-link p-0 text-muted">Gallery Pesantren</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="/berita" class="nav-link p-0 text-muted">Kegiatan Sosial</a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-2">
-                                    <a href="#" class="nav-link p-0 text-muted">Alumni</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="#" class="nav-link p-0 text-muted">Info PSB</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="#" class="nav-link p-0 text-muted">Prestasi</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a href="#" class="nav-link p-0 text-muted">Video Kegiatan</a>
-                                </li>
-                            </ul>
-                        </div>
+    <footer class="bg-primary text-white text-center text-lg-start" style="width: 100%;">
+        <!-- Grid container -->
+        <div class="container p-4 d-flex justify-content-center">
+            <div class="row w-75">
+                <!-- Column 1: Logo and Social Links -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <div class=" d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+                        <img src="{{ asset('assets/icons/ic-logo-ponpes-02.png')}}" height="70" alt="Logo" loading="lazy" />
                     </div>
-
-                    {{-- Kolom 2 Media Sosial --}}
-                    <div class="col-12 col-md-3 mb-3">
-                        <h5 class="fw-bold mb-3">Follow Kami</h5>
-                        <div class="d-flex">
-                            <a href="https://www.instagram.com/ponpes.daruliman/" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{ asset('assets/icons/instagram.svg') }}" height="30" width="30" class="me-4">
+                    <p>Homeless animal shelter, a budgetary unit of the Capital City of Warsaw</p>
+                    <ul class="list-unstyled d-flex justify-content-center">
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                                <i class='bx bxl-facebook'></i>
                             </a>
-                            <a href="https://wa.me/6285769515062" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{ asset('assets/icons/whatsapp.svg') }}" height="30" width="30" class="me-4">
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                                <i class='bx bxl-instagram'></i>
                             </a>
-                        </div>
-                    </div>
-
-                    {{-- Kolom 3 Kontak --}}
-                    <div class="col-12 col-md-3 mb-3">
-                        <h5 class="fw-bold mb-3">Kontak Kami</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-muted">infoponpes.src.id</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-muted">0813-xxxx-xxxx</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-muted">0813-xxxx-xxxx</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {{-- Kolom 4 Alamat --}}
-                    <div class="col-12 col-md mb-3">
-                        <h5 class="fw-bold mb-3">Alamat Sekolah</h5>
-                        <p>Pondok Pesantren Darul Iman, samping kopra, Kampung Umbul Kates, Desa Tanjung Sari 5, Natar. Unnamed Road, Tanjungsari, Kec. Natar, Kabupaten Lampung Selatan, Lampung 35362, Indonesia</p>
-                    </div>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </footer>
-        </div>
-    </section>
-
-    {{-- Bootstrap --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-    {{-- AOS --}}
+                <!-- Column 2: Contact Information -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">KONTAK KAMI</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">When your pet is missing</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Recently found</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">How to adopt?</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Pets for adoption</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Material gifts</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Help with walks</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Volunteer activities</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Navigation Links -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">NAVIGASI</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">General information</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">About the shelter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Statistic data</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Job</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Tenders</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">daruliman.com</a>
+        </div>
+    </footer>
+    
+    
+    {{-- Bootstrap JS --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    {{-- AOS JS --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    {{-- JQuery --}}
+    {{-- jQuery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/magnific.js') }}"></script>
 
     <script>
-        const navbar = document.querySelector('.fixed-top');
-        window.onscroll = () => {
-        };
-
         // Initialize AOS
         AOS.init();
 
@@ -161,24 +169,17 @@
                 }
             });
         });
-    </script>   
+    </script>
 
-    {{-- JQUERY --}}
-    {{-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script> --}}
-    
     {{-- Summernote JS --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
-
     <script>
         $(document).ready(function() {
-                $('#summernote').summernote({
-                    height: 200,
-                });
+            $('#summernote').summernote({
+                height: 200,
+            });
         });
     </script>
 
-    
-
-
+</body>
 </html>
