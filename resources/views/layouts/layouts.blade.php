@@ -9,6 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -49,96 +57,85 @@
     {{-- Content --}}
     @yield('content')
 
-    <footer class="bg-primary text-white text-center text-lg-start" style="width: 100%;">
-        <!-- Grid container -->
-        <div class="container p-4 d-flex justify-content-center">
-            <div class="row w-75">
-                <!-- Column 1: Logo and Social Links -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <div class=" d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-                        <img src="{{ asset('assets/icons/ic-logo-ponpes-02.png')}}" height="70" alt="Logo" loading="lazy" />
-                    </div>
-                    <p>Homeless animal shelter, a budgetary unit of the Capital City of Warsaw</p>
-                    <ul class="list-unstyled d-flex justify-content-center">
-                        <li>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <i class='bx bxl-facebook'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <i class='bx bxl-instagram'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                                <i class='bx bxl-youtube'></i>
-                            </a>
-                        </li>
-                    </ul>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="footer-col">
+                <div class="brand">
+                  <img
+                    src="{{ asset('assets/icons/logo-ponpes.png')}}"
+                    height="70"
+                    alt="Logo"
+                    loading="lazy"
+                  />
+                  <h1>Pondok Pesantren Darul Iman</h1>
                 </div>
-    
-                <!-- Column 2: Contact Information -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">KONTAK KAMI</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">When your pet is missing</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Recently found</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">How to adopt?</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Pets for adoption</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Material gifts</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Help with walks</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Volunteer activities</a>
-                        </li>
-                    </ul>
-                </div>
-    
-                <!-- Column 3: Navigation Links -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">NAVIGASI</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">General information</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">About the shelter</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Statistic data</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Job</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Tenders</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                <p class="tentang">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+                  quas. Voluptas earum ducimus provident? Accusantium enetur quis
+                  corrupti quaerat eos nobis minus asperiores in excepturi, error
+                  vitae ut, corporis ab.
+                </p>
+                <ul class="sosmed">
+                  <li>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
             </div>
+            <div class="col-md-4">
+              <div class="footer-col">
+                <h2>Kontak Kami</h2>
+                <p class="alamat">
+                  Jln Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Hic, voluptas!
+                </p>
+                <ul class="kontak">
+                  <li>
+                    <i class="fa-solid fa-envelope"></i>Email :
+                    ponpesdaruliman@gmail.com
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-phone"></i> Telp/Fax : 0892 - 1233 -
+                    1233
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="footer-col">
+                <h2>Navigasi</h2>
+                <ul class="footer-nav">
+                  <li>
+                    <a href="">Profil</a>
+                  </li>
+                  <li>
+                    <a href="">Visi dan Misi</a>
+                  </li>
+                  <li>
+                    <a href="">Struktur Organisasi</a>
+                  </li>
+                  <li>
+                    <a href="">Sumber Daya Manusia</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container text-center">
+              <h6>Hak Cipta dilindungi. © 2024 <a href="">markhodev</a></h6>
+            </div>
+          </div>
         </div>
-    
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2024 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">daruliman.com</a>
-        </div>
-    </footer>
+      </footer>
     
     
     {{-- Bootstrap JS --}}
