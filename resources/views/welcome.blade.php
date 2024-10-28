@@ -10,7 +10,7 @@
   </div>
 </section>
 
-<section id="program" style="margin-top: -30px">
+{{-- <section id="program" style="margin-top: -30px">
   <div class="container col-xxl-9">
     <div class="row">
       <div class="col-lg-3 col-md-6 col mb-2" data-aos="flip-down">
@@ -47,7 +47,7 @@
       </div>
     </div>
   </div>  
-</section>
+</section> --}}
 
 {{-- Join --}}
 <section id="join">
@@ -63,7 +63,7 @@
           Pondok Pesantren Darul Iman merupakan pesantren terbaik di Lampung,
           dengan meluluskan santri dan menjadi ustadz terkemuka mendakwahkan di pelosok nusantara.
         </p>
-        <button class="btn btn-regis">Register</button>
+        <button class="btn btn-regis">Daftar Sekarang</button>
       </div>  
       <div class="col-lg-6" data-aos="zoom-in-left">
         <img src="{{ asset('assets/images/il-photo-04.png') }}" class="img-fluid" alt="Ilustrasi Santri">

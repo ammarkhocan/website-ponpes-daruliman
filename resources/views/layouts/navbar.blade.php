@@ -1,5 +1,5 @@
 {{-- Navbar --}}
-<nav class="navbar navbar-expand-lg py-3 fixed-top {{ Request::segment(1) != 'home' ? 'bg-white shadow text-dark' : '' }}">
+<nav class="navbar navbar-expand-lg py-3 fixed-top bg-light {{ Request::segment(1) == '' ? '' : 'bg-white shadow' }}">
     <div class="container">
     <a class="navbar-brand" href="/">
         <img src="{{ asset('assets/icons/ic-logo-ponpes-02.png')}}" height="55" width="195" alt="">
@@ -8,25 +8,22 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">HOME</a>
+            <a class="nav-link active fw-semibold" aria-current="page" href="/">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#join">PROFIL</a>
+            <a class="nav-link active fw-semibold" href="#join">PROFIL</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#berita">BERITA</a>
+            <a class="nav-link active fw-semibold" href="#berita">BERITA</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">PRESTASI</a>
+            <a class="nav-link active fw-semibold" href="#">PRESTASI</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">GALLERY</a>
+            <a class="nav-link active fw-semibold" href="#">GALLERY</a>
         </li>
-        {{-- <li class="nav-item">
-            <a class="nav-link active" href="#">kontak</a>
-        </li> --}}
         </ul>
         <div class="d-flex">
         @auth
@@ -37,7 +34,7 @@
         @else
 
         
-        <button class="btn btn-danger">Register</button>
+        {{-- <button class="btn btn-danger">Register</button> --}}
         @endauth
         
         </div>

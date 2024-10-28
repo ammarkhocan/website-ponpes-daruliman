@@ -59,6 +59,15 @@ html {
     border-color: #30693e; /* Border tetap hijau tua */
 }
 /* Navbar */
+.navbar {
+    display: flex;
+    z-index: 999;
+}
+
+.navbar .container ul li a {
+    color: aqua;
+}
+
 .nav-item .nav-link {
     font-size: 18px;
     margin-left: 10px;
@@ -82,7 +91,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 100vh;
 }
 
 .hero-title {
